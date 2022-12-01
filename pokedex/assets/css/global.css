@@ -1,0 +1,33 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; /* considerar borda como tamanho total (padroniza) */
+}
+h1{
+    color:brown;
+}
+
+body{
+    background-color: rgb(221, 217, 217);
+}
+
+/* dar distancia de 1 rem(medida relativa ao tamanho da fonr) px eh fixo */
+/* se n me engano, padding eh interno e margin externo, algo assim */
+.content{
+    height: 100vw;
+    width: 100vh;
+    padding: 1rem;
+    background-color: #ffff;
+}
+
+@media screen and (min-width: 992px){
+    .content{
+        max-width: 992px;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 1rem;
+    }
+}
+
+.content h1{
+    margin: 0;
+}
