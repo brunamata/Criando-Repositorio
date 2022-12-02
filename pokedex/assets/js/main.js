@@ -1,19 +1,21 @@
 const { json } = require("server/reply");
 
+function convertPokemonTypesToLi(pokemonTypes){
+    return pokemonTypes.map((typeSlot) => '<li class="type">$(typeSlot.type.name)</li>')
+}
+
 function convertPokemonToLI(pokemon){
     return '\
     <li class="pokemon"> \
-        <span class="number">#001</span> <!-- numero do pokemon -->\
+        <span class="number">$(pokemon.order)</span> <!-- numero do pokemon -->\
         <span class="name">$(pokemon.name)</span>\
 \
         <div class="detail">  <!-- detalhes do pokemon -->\
             <ol class="types"> <!-- onde entra a lista de tipos do pokemon -->\
-                <li class="type">grass</li>\
-                <li class="type">poison</li>\
-\
+                $(convertPokemonsTypesToLi(pokemon.types).join("")))\
             </ol>\
 \
-            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt=$(pokemon.name)>\
+            <img src="$(pokemon.sprites.other.dream_world.front_default)" alt=$(pokemon.name)>\
         </div>\
         \
     </li>\
