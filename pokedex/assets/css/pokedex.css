@@ -115,6 +115,25 @@
     align-self: flex-end; /* alinha so a imagem a direita */
 }
 
+.pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.pagination button{
+    padding: .25rem .5rem; /* 0.5 na esq e 1 embaixo */
+    font-size: .625rem;
+    margin: .25rem 0;
+    color: #ffff;
+    background-color: #4e00a8;
+    border: none;
+    border-radius: 1rem;
+}
+
 
 /* -------MEDIA CARE-------- */
 @media screen and (min-width: 380px){ /* a partir do momento q a tela cresce a partir de 380px */
