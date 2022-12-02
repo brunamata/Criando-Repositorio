@@ -1,9 +1,5 @@
 const { json } = require("server/reply");
 
-const offset = 0;
-const limit = 10;
-const url = "https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}" /* endereco da api */
-
 function convertPokemonToLI(pokemon){
     return '\
     <li class="pokemon"> \
@@ -26,14 +22,11 @@ function convertPokemonToLI(pokemon){
 
 const pokemonList = document.getElementById('pokemonList'); 
 
-  pokeApi.getPokemons().then((pokemons)=> {
-        const listItens = {};
+  pokeApi.getPokemons().then((pokemons = [])=> {
 
-        pokemons.map(); //retorna uma lista transformada
+    pokemonList.innerHTML += pokemons.map(convertPokemonToLI).join("") 
+    //.map retorna uma lista transformada sem precisar da estrutura antiga do for
+    //.join junta todos os elementos em string com separador dentro do () - eh vazio, nesse caso
 
-        for(let i=0; i<pokemons.lenght; i++){
-           const pokemon = pokemons[i];
-           listItens.push(convertPokemonToLI(pokemon)); //converte em lista de pokemons em html
-        }
     })
 

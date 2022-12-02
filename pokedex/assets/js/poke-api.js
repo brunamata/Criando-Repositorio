@@ -1,5 +1,4 @@
 
-
 //criando objeto
 const pokeApi = {} 
 
